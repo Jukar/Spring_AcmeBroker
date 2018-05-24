@@ -1,0 +1,59 @@
+package domain;
+
+import java.util.Date;
+
+import javax.validation.constraints.Past;
+
+public class Message extends DomainEntity{
+	//No estoy seguro de si es posible sacar este atributo Folder, de no ser asi quitar el atrib y 
+	//el metodo que lo acompaña
+	private Folder folder;
+	private Actor sender;
+	private Actor recipent;
+	private Date moment;
+	private String subject;
+	private String body;
+	
+	
+	public Message() {
+		super();
+	}
+	public Actor getSender() {
+		return sender;
+	}
+	public void setSender(Actor sender) {
+		this.sender = sender;
+	}
+	public Actor getRecipent() {
+		return recipent;
+	}
+	public void setRecipent(Actor recipent) {
+		this.recipent = recipent;
+	}
+	@Past
+	public Date getMoment() {
+		return moment;
+	}
+	public void setMoment(Date moment) {
+		this.moment = moment;
+	}
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	public String getBody() {
+		return body;
+	}
+	public void setBody(String body) {
+		this.body = body;
+	}
+	//
+	public Folder getFolder() {
+		return folder;
+	}
+	public void setFolder(Folder folder) {
+		this.folder = folder;
+	}
+}

@@ -1,0 +1,65 @@
+package domain;
+
+import java.util.Collection;
+import java.util.Date;
+
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotBlank;
+
+public class Request extends DomainEntity{
+	private Consumer consumer;
+	private Collection<Contract> contracts;
+	
+	private String code;
+	private String description;
+	private Date creationMoment;
+	private Date endMoment;
+	
+	
+	public Request() {
+		super();
+	}
+	public Consumer getConsumer() {
+		return consumer;
+	}
+	public void setConsumer(Consumer consumer) {
+		this.consumer = consumer;
+	}
+	public Collection<Contract> getContracts() {
+		return contracts;
+	}
+	public void setContracts(Collection<Contract> contracts) {
+		this.contracts = contracts;
+	}
+	@Pattern(regexp = "[A-Za-z0-9_]+(-[A-za-z0-9_]+)?")
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	@NotBlank
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	@Past
+	public Date getCreationMoment() {
+		return creationMoment;
+	}
+	public void setCreationMoment(Date creationMoment) {
+		this.creationMoment = creationMoment;
+	}
+	public Date getEndMoment() {
+		return endMoment;
+	}
+	public void setEndMoment(Date endMoment) {
+		this.endMoment = endMoment;
+	}
+	
+
+}

@@ -1,0 +1,102 @@
+package domain;
+
+import java.util.Collection;
+import java.util.Date;
+
+import javax.validation.constraints.Past;
+
+import org.hibernate.validator.constraints.NotBlank;
+
+public class Contract extends DomainEntity{
+	private Collection<AuditRecord> records;
+	private Collection<Assesment> assesments;
+	private Administrator administrator;
+	private Request request;
+	private Collection<Invoice> invoices;
+	
+	//[0...1] Double en otro caso double
+	//El isSigned al ser un atributo derivado creo que son necesarios dos atributos que representen 
+	//las firmas de los supplier y del consumer.
+	private Boolean isSigned;
+	private Date creationMoment;
+	private String text;
+	private Date endMoment;
+	//Los dos atributos siguientes tienen como atributo multiplicidad [0...1], pero no se puede 
+	//poner date por eso lo dejo en Date
+	private Date dateSignedContractor;
+	private Date dateSignedContractHolder;
+	
+	
+	
+	public Contract() {
+		super();
+	}
+	public Collection<AuditRecord> getRecords() {
+		return records;
+	}
+	public void setRecords(Collection<AuditRecord> records) {
+		this.records = records;
+	}
+	public Collection<Assesment> getAssesments() {
+		return assesments;
+	}
+	public void setAssesments(Collection<Assesment> assesments) {
+		this.assesments = assesments;
+	}
+	public Administrator getAdministrator() {
+		return administrator;
+	}
+	public void setAdministrator(Administrator administrator) {
+		this.administrator = administrator;
+	}
+	public Request getRequest() {
+		return request;
+	}
+	public void setRequest(Request request) {
+		this.request = request;
+	}
+	public Collection<Invoice> getInvoices() {
+		return invoices;
+	}
+	public void setInvoices(Collection<Invoice> invoices) {
+		this.invoices = invoices;
+	}
+	public Boolean getIsSigned() {
+		return isSigned;
+	}
+	public void setIsSigned(Boolean isSigned) {
+		this.isSigned = isSigned;
+	}
+	@Past
+	public Date getCreationMoment() {
+		return creationMoment;
+	}
+	public void setCreationMoment(Date creationMoment) {
+		this.creationMoment = creationMoment;
+	}
+	@NotBlank
+	public String getText() {
+		return text;
+	}
+	public void setText(String text) {
+		this.text = text;
+	}
+	public Date getEndMoment() {
+		return endMoment;
+	}
+	public void setEndMoment(Date endMoment) {
+		this.endMoment = endMoment;
+	}
+	public Date getDateSignedContractor() {
+		return dateSignedContractor;
+	}
+	public void setDateSignedContractor(Date dateSignedContractor) {
+		this.dateSignedContractor = dateSignedContractor;
+	}
+	public Date getDateSignedContractHolder() {
+		return dateSignedContractHolder;
+	}
+	public void setDateSignedContractHolder(Date dateSignedContractHolder) {
+		this.dateSignedContractHolder = dateSignedContractHolder;
+	}
+}

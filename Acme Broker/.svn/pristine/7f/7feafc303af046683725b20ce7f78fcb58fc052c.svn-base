@@ -1,0 +1,49 @@
+package domain;
+
+import java.util.Collection;
+
+public abstract class Folder extends DomainEntity{
+	private Collection<Message> messages;
+	private Actor actor;
+	
+	private Folder folderParent;
+	private Collection<Folder> folderChilds;
+	
+	public Folder() {
+		super();
+	}
+
+	public Collection<Message> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(Collection<Message> messages) {
+		this.messages = messages;
+	}
+
+	public Actor getActor() {
+		return actor;
+	}
+
+	public void setActor(Actor actor) {
+		this.actor = actor;
+	}
+
+	public Folder getFolderParent() {
+		return folderParent;
+	}
+
+	public void setFolderParent(Folder folderParent) {
+		this.folderParent = folderParent;
+	}
+
+	public Collection<Folder> getFolderChilds() {
+		return folderChilds;
+	}
+
+	public void setFolderChilds(Collection<Folder> folderChilds) {
+		this.folderChilds = folderChilds;
+	}
+	
+	
+}

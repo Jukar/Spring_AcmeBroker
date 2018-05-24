@@ -1,0 +1,20 @@
+package domain;
+
+import java.util.Collection;
+
+public class Administrator extends Actor{
+	private Collection<Contract> contracts;
+
+	public Administrator() {
+		super();
+	}
+
+	public Collection<Contract> getContracts() {
+		return contracts;
+	}
+
+	public void setContracts(Collection<Contract> contracts) {
+		this.contracts = contracts;
+	}
+
+}

@@ -1,0 +1,55 @@
+package domain;
+
+import java.util.Date;
+
+import javax.validation.constraints.Past;
+
+import org.hibernate.validator.constraints.NotBlank;
+
+public class Invoice extends DomainEntity{
+	private Contract contract;
+	private Date creationMoment;
+	private Date paymentMoment;
+	private String description;
+	private Money cost;
+	
+	
+	public Invoice() {
+		super();
+	}
+	public Contract getContract() {
+		return contract;
+	}
+	public void setContract(Contract contract) {
+		this.contract = contract;
+	}
+	@Past
+	public Date getCreationMoment() {
+		return creationMoment;
+	}
+	public void setCreationMoment(Date creationMoment) {
+		this.creationMoment = creationMoment;
+	}
+	@Past
+	public Date getPaymentMoment() {
+		return paymentMoment;
+	}
+	public void setPaymentMoment(Date paymentMoment) {
+		this.paymentMoment = paymentMoment;
+	}
+	@NotBlank
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public Money getCost() {
+		return cost;
+	}
+	public void setCost(Money cost) {
+		this.cost = cost;
+	}
+	
+
+}

@@ -1,0 +1,66 @@
+package domain;
+
+import java.util.Collection;
+
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotBlank;
+
+public class Item extends DomainEntity{
+	private Supplier supplier;
+	private Collection<String> tags;
+	
+	private String name;
+	private String code;
+	private String description;
+	private Money price;
+	
+
+	public Item() {
+		super();
+	}
+	
+	public Supplier getSupplier() {
+		return supplier;
+	}
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
+	}
+	public Collection<String> getTags() {
+		return tags;
+	}
+	public void setTags(Collection<String> tags) {
+		this.tags = tags;
+	}
+	@NotBlank
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+//	@Unique
+//	@Pattern [\w+(-\w+)?]
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	//Cambiar la constrait min(0.0) por min(0) a pesar de ser un double
+	@Min(0)
+	public Money getPrice() {
+		return price;
+	}
+	public void setPrice(Money price) {
+		this.price = price;
+	}
+	
+
+}

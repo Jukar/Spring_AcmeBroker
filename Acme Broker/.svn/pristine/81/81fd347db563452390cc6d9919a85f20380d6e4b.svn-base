@@ -1,0 +1,21 @@
+package domain;
+
+import java.util.Collection;
+
+public class Supplier extends Customer{
+	private Collection<Item> items;
+
+	
+	public Supplier() {
+		super();
+	}
+
+	public Collection<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(Collection<Item> items) {
+		this.items = items;
+	}
+
+}

@@ -1,0 +1,17 @@
+package domain;
+
+import java.util.Collection;
+
+public class Auditor extends Actor{
+	private Collection<AuditRecord> records;
+	
+	
+
+	public Auditor() {
+		super();
+	}
+
+	public Collection<AuditRecord> getRecords() {
+		return records;
+	}
+}

@@ -1,0 +1,73 @@
+package domain;
+
+import java.util.Collection;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotBlank;
+
+public abstract class Customer extends Actor{
+	private String companyName;
+	private String ticker;
+	private CreditCard creditcard;
+	
+	private Collection<Assesment> assesments;
+	private Curriculum curriculum;
+	private Collection<Request> contract;
+	
+	public Customer() {
+		super();
+	}
+	@NotBlank
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	@Pattern(regexp="[A-Za-z0-9_]+(-[A-Za-z0-9_])?")
+	public String getTicker() {
+		return ticker;
+	}
+
+	public void setTicker(String ticker) {
+		this.ticker = ticker;
+	}
+	@Valid
+	@NotNull
+	public CreditCard getCreditcard() {
+		return creditcard;
+	}
+
+	public void setCreditcard(CreditCard creditcard) {
+		this.creditcard = creditcard;
+	}
+
+	public Collection<Assesment> getAssesments() {
+		return assesments;
+	}
+
+	public void setAssesments(Collection<Assesment> assesments) {
+		this.assesments = assesments;
+	}
+
+	public Curriculum getCurriculum() {
+		return curriculum;
+	}
+
+	public void setCurriculum(Curriculum curriculum) {
+		this.curriculum = curriculum;
+	}
+
+	public Collection<Request> getContract() {
+		return contract;
+	}
+
+	public void setContract(Collection<Request> contract) {
+		this.contract = contract;
+	}
+
+}

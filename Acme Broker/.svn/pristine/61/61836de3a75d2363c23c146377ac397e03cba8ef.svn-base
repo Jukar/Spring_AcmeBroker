@@ -1,0 +1,53 @@
+package domain;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.URL;
+
+public class Curriculum extends DomainEntity{
+	private String webAddress;
+	private String mission;
+	private String vision;
+	private String values;
+	private String statement;
+	
+	
+	public Curriculum() {
+		super();
+	}
+	@URL
+	public String getWebAddress() {
+		return webAddress;
+	}
+	public void setWebAddress(String webAddress) {
+		this.webAddress = webAddress;
+	}
+	@NotBlank
+	public String getMission() {
+		return mission;
+	}
+	public void setMission(String mission) {
+		this.mission = mission;
+	}
+	@NotBlank
+	public String getVision() {
+		return vision;
+	}
+	public void setVision(String vision) {
+		this.vision = vision;
+	}
+	@NotBlank
+	public String getValues() {
+		return values;
+	}
+	public void setValues(String values) {
+		this.values = values;
+	}
+	@NotBlank
+	public String getStatement() {
+		return statement;
+	}
+	public void setStatement(String statement) {
+		this.statement = statement;
+	}
+	
+}

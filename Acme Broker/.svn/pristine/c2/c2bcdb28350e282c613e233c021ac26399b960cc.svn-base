@@ -1,0 +1,22 @@
+package domain;
+
+import java.util.Collection;
+
+public class Consumer extends Customer{
+	private Collection<Request> requests;
+
+	
+
+	public Consumer() {
+		super();
+	}
+
+	public Collection<Request> getRequests() {
+		return requests;
+	}
+
+	public void setRequests(Collection<Request> requests) {
+		this.requests = requests;
+	}
+
+}
